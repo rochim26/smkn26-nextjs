@@ -556,13 +556,11 @@ const InstruksiUjian = ({ examClassroom, soal }) => {
   );
 };
 
-export async function getServerSideProps({ query: { examClassroom, soal } }) {
+InstruksiUjian.getInitialProps = async ({ query: { examClassroom, soal } }) => {
   return {
-    props: {
-      examClassroom,
-      soal,
-    },
+    examClassroom,
+    soal,
   };
-}
+};
 
 export default InstruksiUjian;

@@ -150,11 +150,9 @@ const index = ({ id }) => {
   );
 };
 
-export async function getServerSideProps({ query: { id } }) {
+index.getInitialProps = async ({ query: { id } }) => {
   return {
-    props: {
       id,
-    },
   };
 }
 

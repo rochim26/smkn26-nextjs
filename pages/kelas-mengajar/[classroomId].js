@@ -80,12 +80,10 @@ const index = ({ classroomId }) => {
   );
 };
 
-export async function getServerSideProps({ query: { classroomId } }) {
+index.getInitialProps = async ({ query: { classroomId } }) => {
   return {
-    props: {
-      classroomId,
-    },
+    classroomId,
   };
-}
+};
 
 export default index;

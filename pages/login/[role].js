@@ -122,11 +122,9 @@ const index = ({ role }) => {
   }
 };
 
-export function getServerSideProps({ query }) {
+index.getInitialProps = async ({ query }) => {
   return {
-    props: {
       role: query.role,
-    },
   };
 }
 

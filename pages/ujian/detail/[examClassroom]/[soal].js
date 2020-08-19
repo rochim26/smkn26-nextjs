@@ -230,13 +230,11 @@ const Ujian = ({ examClassroom, soal }) => {
   );
 };
 
-export async function getServerSideProps({ query: { examClassroom, soal } }) {
+Ujian.getInitialProps = async ({ query: { examClassroom, soal } }) => {
   return {
-    props: {
-      examClassroom,
-      soal,
-    },
+    examClassroom,
+    soal,
   };
-}
+};
 
 export default Ujian;

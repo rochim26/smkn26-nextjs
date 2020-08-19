@@ -136,12 +136,10 @@ const eLearningDetail = ({ id }) => {
   );
 };
 
-export async function getServerSideProps({ query: { id } }) {
+eLearningDetail.getInitialProps = async ({ query: { id } }) => {
   return {
-    props: {
-      id,
-    },
+    id,
   };
-}
+};
 
 export default eLearningDetail;
