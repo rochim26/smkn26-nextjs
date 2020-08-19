@@ -8,11 +8,13 @@ import swal from "sweetalert";
 
 const InstruksiUjian = ({ examClassroom, soal }) => {
   let user;
-  try {
-    user = JSON.parse(localStorage.getItem("user"));
-  } catch (err) {
-    console.log(err);
-  }
+  useEffect(() => {
+    try {
+      user = JSON.parse(localStorage.getItem("user"));
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const [currentQuestion, setCurrentQuestion] = useState("");
   const [currentTime, setCurrentTime] = useState(new Date());

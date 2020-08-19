@@ -14,11 +14,13 @@ const Index = () => {
   const router = useRouter();
   let user;
 
-  try {
-    user = JSON.parse(localStorage.getItem("user"));
-  } catch (err) {
-    console.log(err);
-  }
+  useEffect(() => {
+    try {
+      user = JSON.parse(localStorage.getItem("user"));
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const [examClassrooms, setExamClassrooms] = useState([]);
 
